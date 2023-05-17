@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <div>
+        {% if table_data %}
+            {% if table_data[0].__class__.__name__ == 'tuple' %}
+                <h2>Table Data:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for column_name in table_data[0] %}
+                                <th>{{ column_name }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table_data %}
+                            <tr>
+                                {% for column_value in row %}
+                                    <td>{{ column_value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h2>Output:</h2>
+                <pre>{{ table_data }}</pre>
+            {% endif %}
+        {% endif %}
+    </div>
+    <a href="{{ url_for('home') }}">Go back</a>
+</body>
+</html>
