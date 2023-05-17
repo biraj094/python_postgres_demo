@@ -4,12 +4,17 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to the Demo</h1>
+    <h1>Northwind Database</h1>
 
     <form action="{{ url_for('result') }}" method="POST">
-        <button type="submit" name="action" value="show_table">Show All Tables</button>
-        <button type="submit" name="action" value="add_row">Add a Row</button>
-        <button type="submit" name="action" value="delete_value">Delete a Value</button>
+        <input type="text" name="add_region" placeholder="Enter region">
+        <button type="submit" name="action" value="show_order_table">Show Order Table</button>
+        <button type="submit" name="action" value="show_employee_table">Show Employee Table</button>
+        <button type="submit" name="action" value="show_region_table">Show Region Table</button>
+        <button type="submit" name="action" value="add_region">Add Region</button>
+        <br>
+        <button type="submit" name="action" value="a">Backup</button>
+        <button type="submit" name="action" value="b">Get audit Log</button>
     </form>
 </body>
 </html>
